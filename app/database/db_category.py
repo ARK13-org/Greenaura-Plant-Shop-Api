@@ -5,12 +5,14 @@ from sqlalchemy.orm import Session
 from app.models.category_model import Category
 from app.schemas.category import CategoryBase
 
-def create_category(db: Session, category_name: str):
-    category = Category(name=category_name)
-    db.add(category)
+def create_category(db, request):
+    new_category = Category(name=request.name)
+
+    db.add(new_category)
     db.commit()
-    db.refresh(category)
-    return category
+    db.refresh(new_category)
+
+    return new_category
 
 def get_all_categories(db: Session):
     categories = db.query(Category).all()

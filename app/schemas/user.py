@@ -18,3 +18,4 @@ class UserDisplay(BaseModel):
     last_name: str
     phone_number: str
     email: str
+    profile_picture: str | None = None

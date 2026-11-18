@@ -15,7 +15,7 @@ def create_category(request: CategoryBase, db: Session = Depends(get_db)):
 def get_all_categories(db: Session = Depends(get_db)):
     return db_category.get_all_categories(db)
 
-@router.delete("/{category_id}", status_code=204)
+@router.delete("/{category_id}", status_code=200)
 def delete_category(category_id: int, db: Session = Depends(get_db)):
     db_category.delete_category(db, category_id)
     return {"message": "Category deleted successfully."}
