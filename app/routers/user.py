@@ -28,7 +28,7 @@ def delete_user(user_id: int, db: Session = Depends(get_db)):
     db_user.delete_user(db, user_id)
     return {"message": "User deleted successfully."}
 
-UPLOAD_DIR = Path("uploads/profile_pictures")
+UPLOAD_DIR = Path(__file__).resolve().parents[2] / "uploads" / "profile_pictures"
 UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
 

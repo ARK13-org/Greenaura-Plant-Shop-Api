@@ -13,7 +13,7 @@ class PlantBase(BaseModel):
     plant_name: str
     price: float
     size: str | None = None
-    rating: int | None = None
+    rating: float | None = None
     humidity: int | None = None
     temperature: str | None = None
     category_id: int
@@ -28,7 +28,7 @@ class PlantDisplay(BaseModel):
     plant_name: str
     price: float
     size: str | None = None
-    rating: int | None = None
+    rating: float | None = None
     humidity: int | None = None
     temperature: str | None = None
     category: CategoryInfo

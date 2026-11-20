@@ -2,7 +2,6 @@
 from sqlalchemy.orm import Session
 from fastapi.exceptions import HTTPException
 from fastapi import status
-from app.database.hash import Hash
 from app.models.plant_model import Plant
 from app.schemas.plant import PlantBase
 
